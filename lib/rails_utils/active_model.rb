@@ -1,0 +1,5 @@
+require 'rails_utils/active_model/value_object'
+require 'rails_utils/active_model/validations/email_address'
+require 'rails_utils/active_model/validations/phone_number'
+require 'rails_utils/active_model/validations/uri'
+require 'rails_utils/active_model/validations/zip_code'
