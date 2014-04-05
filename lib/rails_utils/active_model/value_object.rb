@@ -24,7 +24,7 @@ module RailsUtils
     end
 
     def destroy
-      true
+      @destroyed = true
     end
 
     def assign_attributes (attributes)
@@ -39,6 +39,10 @@ module RailsUtils
 
     def persisted?
       !to_param.nil?
+    end
+
+    def destroyed?
+      @destroyed.nil? ? false : @destroyed
     end
   end
 end
