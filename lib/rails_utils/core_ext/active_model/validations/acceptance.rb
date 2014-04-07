@@ -5,10 +5,10 @@ module ActiveModel
   module Validations
     class AcceptanceValidator < EachValidator
       def initialize (options)
-        defaults = { :allow_nil => true, :accept => ['1', 1, true] }
-        options  = options.dup
+        defaults         = { :allow_nil => true, :accept => ['1', 1, true] }
+        options          = options.dup
         options[:accept] = Array(options[:accept]) if options.key? :accept
-        options = defaults.merge!(options)
+        options          = defaults.merge!(options)
         super
       end
 
