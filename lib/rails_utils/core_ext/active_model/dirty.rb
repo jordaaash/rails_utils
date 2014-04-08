@@ -2,8 +2,9 @@ require 'active_model/dirty'
 
 module ActiveModel
   module Dirty
+    alias_method :changed_without_patch?, :changed?
     def changed? (attribute = nil)
-      attribute.nil? ? super() : changed_attributes.include?(attribute)
+      attribute.nil? ? changed_without_patch? : changed_attributes.include?(attribute)
     end
   end
 end

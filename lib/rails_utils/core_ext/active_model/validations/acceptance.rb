@@ -4,12 +4,13 @@ require 'active_model/validator'
 module ActiveModel
   module Validations
     class AcceptanceValidator < EachValidator
+      alias_method :initialize_without_patch, :initialize
       def initialize (options)
         defaults         = { :allow_nil => true, :accept => ['1', 1, true] }
         options          = options.dup
         options[:accept] = Array(options[:accept]) if options.key? :accept
         options          = defaults.merge!(options)
-        super
+        initialize_without_patch(options)
       end
 
       def validate_each (record, attribute, value)
