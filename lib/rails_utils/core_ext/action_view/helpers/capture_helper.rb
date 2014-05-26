@@ -4,13 +4,16 @@ module ActionView
   module Helpers
     module CaptureHelper
       def default_for (name, content = nil, options = {}, &block)
-        content_for?(name) \
-          ? content_for(name) : content_for(name, content, options, &block)
+        if (value = content_for?(name))
+          value
+        else
+          content_for(name, content, options, &block)
+        end
       end
 
       def yield_for (name, content = nil, &block)
-        if content_for?(name)
-          content_for(name)
+        if (value = content_for?(name))
+          value
         else
           block_given? ? capture(&block) : content
         end

@@ -14,13 +14,13 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
-  gem.name = 'rails_utils'
-  gem.homepage = 'http://github.com/jordansexton/rails_utils'
-  gem.license = 'MIT'
-  gem.summary = 'A toolkit of utility classes and Rails core extensions.'
+  gem.name        = 'rails_utils'
+  gem.homepage    = 'http://github.com/jordansexton/rails_utils'
+  gem.license     = 'MIT'
+  gem.summary     = 'A toolkit of utility classes and Rails core extensions.'
   gem.description = 'A toolkit of utility classes and Rails core extensions.'
-  gem.email = 'jordan@jordansexton.com'
-  gem.authors = ['Jordan Sexton']
+  gem.email       = 'jordan@jordansexton.com'
+  gem.authors     = ['Jordan Sexton']
   # dependencies defined in Gemfile
 end
 # Jeweler::RubygemsDotOrgTasks.new
@@ -44,7 +44,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ''
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "rails_utils #{version}"
+  rdoc.title    = "rails_utils #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

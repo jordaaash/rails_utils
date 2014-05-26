@@ -5,7 +5,7 @@ module ActiveModel
     module ClassMethods
       def validate (*args, &block)
         options = args.extract_options!
-        if options.key? :on
+        if options.include?(:on)
           options      = options.dup
           options[:if] = Array(options[:if])
           options[:on] = Array(options[:on])

@@ -20,14 +20,15 @@ class EmailAddressValidator < ActiveModel::EachValidator
     if valid && options[:mx]
       require 'resolv'
       Resolv::DNS.open do |dns|
-        resources = dns.getresources(address.domain, \
-          Resolv::DNS::Resource::IN::MX)
+        resources = dns.getresources(address.domain,
+                                     Resolv::DNS::Resource::IN::MX)
         valid     = resources.any?
       end
     end
 
     unless valid
-      record.errors[attribute] << options[:message] || 'is not a valid email address'
+      record.errors[attribute] << options[:message] \
+        || 'is not a valid email address'
     end
   end
 end

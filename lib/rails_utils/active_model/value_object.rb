@@ -9,8 +9,8 @@ module RailsUtils
       nil
     end
 
-    def initialize (attributes = {})
-      super
+    def initialize (attributes = {}, &block)
+      super(attributes)
       yield self if block_given?
     end
 
@@ -46,3 +46,5 @@ module RailsUtils
     end
   end
 end
+
+ValueObject = RailsUtils::ValueObject
